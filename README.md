@@ -1,16 +1,13 @@
-## Hi there 👋
+# callmejustdodo.com
 
-<!--
-**callmejustdodo/callmejustdodo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Personal site for Dohyeon (Dodo) Park.
 
-Here are some ideas to get you started:
+## Run locally
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+This is a dependency-free static site. Open `index.html` in a browser, or serve it locally:
+
+```sh
+python3 -m http.server 4173
+```
+
+Then visit `http://localhost:4173`.
