@@ -1,15 +1,10 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#E9E5DA"/>
-  <rect x="744" y="0" width="456" height="630" fill="#1C1C19"/>
-  <rect x="744" y="0" width="456" height="12" fill="#C8FF00"/>
-  <path d="M0 527H744" stroke="#1C1C19" stroke-width="2"/>
-  <text x="56" y="73" fill="#1C1C19" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">DODO®</text>
-  <text x="56" y="151" fill="#1C1C19" font-family="Georgia, serif" font-size="102" letter-spacing="-5">Call me</text>
-  <text x="56" y="251" fill="#1C1C19" font-family="Georgia, serif" font-size="102" font-style="italic" letter-spacing="-6">just Dodo.</text>
+  <path d="M0 527H1200" stroke="#1C1C19" stroke-width="2"/>
+  <text x="56" y="213" fill="#1C1C19" font-family="Georgia, serif" font-size="168" letter-spacing="-8">Call me</text>
+  <text x="56" y="377" fill="#1C1C19" font-family="Georgia, serif" font-size="168" font-style="italic" letter-spacing="-10">just Dodo.</text>
   <text x="60" y="579" fill="#1C1C19" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">DOHYEON DODO PARK</text>
   <text x="60" y="606" fill="#4D4B46" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="1">FOUNDER · PRODUCT BUILDER · SEOUL</text>
-  <text x="787" y="80" fill="#C8FF00" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">PERSONAL PORTFOLIO</text>
-  <text x="778" y="400" fill="#F5F2E9" font-family="Georgia, serif" font-size="350" font-style="italic" letter-spacing="-25">D.</text>
-  <text x="787" y="538" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">SEOUL · KOREA</text>
-  <text x="787" y="572" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1">CALLMEJUSTDODO.COM</text>
+  <text x="1140" y="578" fill="#1C1C19" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="1">CALLMEJUSTDODO.COM</text>
+  <circle cx="1148" cy="62" r="18" fill="#C8FF00"/>
 </svg>
