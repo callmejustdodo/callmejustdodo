@@ -26,7 +26,7 @@ footer { background:#dcf04b; padding:5vw 3.5vw 1.8rem; min-height:54vh; display:
 
 .archive-grid a { width:max-content; font:.62rem var(--mono); text-underline-offset:3px; }
 
-.hero-highlights { border-top:1px solid var(--line); display:grid; grid-template-columns:repeat(3, 1fr); }
+.hero-highlights { border-top:1px solid var(--line); display:grid; grid-template-columns:repeat(4, 1fr); }
 .hero-highlight { min-height:102px; padding:1rem 1.15rem 1rem 0; border-right:1px solid var(--line); display:grid; grid-template-columns:1fr auto; align-content:space-between; gap:.8rem; text-decoration:none; transition:background .2s, padding .2s; }
 .hero-highlight:nth-child(n+2) { padding-left:1.15rem; }
 .hero-highlight:last-child { border-right:0; }
