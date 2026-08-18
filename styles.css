@@ -23,3 +23,5 @@ footer { background:#dcf04b; padding:5vw 3.5vw 1.8rem; min-height:54vh; display:
 .origin-note span { color:var(--acid); font:.67rem var(--mono); letter-spacing:.05em; white-space:nowrap; }
 .origin-note strong { font-size:clamp(1.05rem, 2.2vw, 1.7rem); font-weight:500; line-height:1.05; letter-spacing:-.055em; }
 @media (max-width:700px) { .project-detail { grid-column:1; grid-row:3; align-self:end; margin-bottom:5.5rem; } .project-detail div { grid-template-columns:repeat(3, 1fr); } .origin-note { align-items:flex-start; flex-direction:column; gap:.55rem; } }
+
+.archive-grid a { width:max-content; font:.62rem var(--mono); text-underline-offset:3px; }
