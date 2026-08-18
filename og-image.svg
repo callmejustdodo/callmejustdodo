@@ -3,16 +3,13 @@
   <rect x="744" y="0" width="456" height="630" fill="#1C1C19"/>
   <rect x="744" y="0" width="456" height="12" fill="#C8FF00"/>
   <path d="M0 527H744" stroke="#1C1C19" stroke-width="2"/>
-  <path d="M744 386H1200" stroke="#E9E5DA" stroke-width="2"/>
   <text x="56" y="73" fill="#1C1C19" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">DODO®</text>
   <text x="56" y="151" fill="#1C1C19" font-family="Georgia, serif" font-size="102" letter-spacing="-5">Call me</text>
   <text x="56" y="251" fill="#1C1C19" font-family="Georgia, serif" font-size="102" font-style="italic" letter-spacing="-6">just Dodo.</text>
   <text x="60" y="579" fill="#1C1C19" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">DOHYEON DODO PARK</text>
   <text x="60" y="606" fill="#4D4B46" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="1">FOUNDER · PRODUCT BUILDER · SEOUL</text>
-  <text x="787" y="80" fill="#C8FF00" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">CURRENTLY BUILDING</text>
-  <text x="787" y="167" fill="#F5F2E9" font-family="Georgia, serif" font-size="66" letter-spacing="-3">Bubblegum</text>
-  <text x="790" y="211" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="20">An AI dating agent on Instagram</text>
-  <text x="787" y="436" fill="#C8FF00" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">PROOF OF WORK</text>
-  <text x="787" y="499" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">1M+ users at 20</text>
-  <text x="787" y="548" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="24">₩20M in month one · ABLUR 2.0</text>
+  <text x="787" y="80" fill="#C8FF00" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">PERSONAL PORTFOLIO</text>
+  <text x="778" y="400" fill="#F5F2E9" font-family="Georgia, serif" font-size="350" font-style="italic" letter-spacing="-25">D.</text>
+  <text x="787" y="538" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">SEOUL · KOREA</text>
+  <text x="787" y="572" fill="#F5F2E9" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1">CALLMEJUSTDODO.COM</text>
 </svg>
