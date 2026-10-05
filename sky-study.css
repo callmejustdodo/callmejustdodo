@@ -1,0 +1,49 @@
+/* Custom sky with CSS fallback; both follow the shared clock. */
+.grain { opacity: .025; }
+.atmosphere {
+  height: 720px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--sky-top, var(--sky)), var(--sky-horizon, var(--glow)) 78%);
+  mask-image: linear-gradient(#000 0%, #000 40%, transparent 83%);
+}
+.sky-clouds, .sky-aurora, .sky-canvas, .sky-mount { position: absolute; inset: 0; }
+.sky-clouds {
+  inset: -5% -10%; opacity: var(--sky-day, 1);
+  background:
+    radial-gradient(ellipse 32% 3% at 67% 17%, var(--sky-cloud, #f5f1e6) 5%, transparent 100%),
+    radial-gradient(ellipse 38% 4% at 87% 24%, var(--sky-cloud, #f5f1e6) 3%, transparent 100%),
+    radial-gradient(ellipse 25% 2% at 19% 34%, var(--sky-cloud, #f5f1e6) 3%, transparent 100%),
+    radial-gradient(ellipse 38% 5% at 78% 44%, var(--sky-cloud, #f5f1e6) 3%, transparent 100%);
+  filter: blur(9px); animation: cloud-drift 65s ease-in-out infinite alternate;
+}
+.sky-aurora {
+  inset: -8% -10% 30% 20%; opacity: var(--sky-night, 0);
+  background: repeating-linear-gradient(112deg, transparent 0% 20%, var(--sky-aurora, #44796f) 26%, transparent 34% 55%);
+  mask-image: radial-gradient(ellipse 60% 18% at 65% 42%, #000 5%, transparent 100%);
+  filter: blur(15px); transform: rotate(-13deg) skewX(-15deg);
+  animation: aurora-drift 38s ease-in-out infinite alternate;
+}
+.sky-canvas { opacity: 0; }
+[data-sky-ready="true"] .sky-canvas { opacity: 1; }
+[data-sky-ready="true"] .sky-clouds, [data-sky-ready="true"] .sky-aurora { visibility: hidden; }
+[data-sky-moving="false"] .sky-clouds, [data-sky-moving="false"] .sky-aurora { animation-play-state: paused; }
+.sky-mount > canvas { width: 100%; height: 100%; display: block; }
+.hero-description, .location, .time-control > summary, .preview-indicator { color: var(--ink); }
+.hero-bottom { flex-wrap: wrap; }
+.sky-study { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 18px; flex-basis: 100%; order: 3; }
+.sky-status { font: 10px var(--mono); margin-left: auto; }
+.sky-status:empty { display: none; }
+.sky-motion { font-size: 11px; min-height: 44px; padding: 8px 0; }
+.sky-motion:disabled { cursor: default; }
+@keyframes cloud-drift { to { transform: translateX(-3%) scale(1.025); } }
+@keyframes aurora-drift { to { transform: rotate(-8deg) skewX(-23deg) translateY(10px); } }
+@media (max-width: 800px) { .sky-status { flex-basis: 100%; margin-left: 0; } }
+@media (max-width: 540px) {
+  .atmosphere { height: 760px; }
+  .hero { min-height: 565px; }
+  .hero-bottom { gap: 8px; }
+  .sky-study { width: 100%; gap: 4px 14px; }
+  .sky-status { flex-basis: auto; font-size: 9px; }
+  .sky-motion { margin-left: auto; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .sky-clouds, .sky-aurora { animation: none; } }

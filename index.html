@@ -6,7 +6,7 @@
     <meta name="description" content="a founder and product builder" />
     <meta name="author" content="Dohyeon Dodo Park" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#e9e5da" />
+    <meta name="theme-color" content="#eeece8" />
     <link rel="canonical" href="https://callmejustdodo.com/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
@@ -14,23 +14,26 @@
     <meta property="og:title" content="Dohyeon Dodo Park" />
     <meta property="og:description" content="a founder and product builder" />
     <meta property="og:url" content="https://callmejustdodo.com/" />
-    <meta property="og:image" content="https://callmejustdodo.com/og-image.png" />
-    <meta property="og:image:secure_url" content="https://callmejustdodo.com/og-image.png" />
+    <meta property="og:image" content="https://callmejustdodo.com/og-image.png?v=20261005-sky" />
+    <meta property="og:image:secure_url" content="https://callmejustdodo.com/og-image.png?v=20261005-sky" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Call Me Just Dodo — Dohyeon Dodo Park's portfolio" />
+    <meta property="og:image:alt" content="Call me just Dodo. — Dohyeon Dodo Park, against a softly clouded blue sky." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dohyeon Dodo Park" />
     <meta name="twitter:description" content="a founder and product builder" />
-    <meta name="twitter:image" content="https://callmejustdodo.com/og-image.png" />
-    <meta name="twitter:image:alt" content="Call Me Just Dodo — Dohyeon Dodo Park's portfolio" />
+    <meta name="twitter:image" content="https://callmejustdodo.com/og-image.png?v=20261005-sky" />
+    <meta name="twitter:image:alt" content="Call me just Dodo. — Dohyeon Dodo Park, against a softly clouded blue sky." />
     <title>Dohyeon Dodo Park</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" href="fonts/radley.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="favicon.ico?v=20261005-sky" sizes="16x16 32x32" />
+    <link rel="icon" href="favicon-32.png?v=20261005-sky" type="image/png" sizes="32x32" />
+    <link rel="icon" href="favicon.svg?v=20261005-sky" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261005-sky" sizes="180x180" />
+    <link rel="stylesheet" href="styles.css?v=20261005-about1" />
+    <link rel="stylesheet" href="sky-study.css?v=20261005-clouds1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -54,84 +57,77 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="atmosphere" aria-hidden="true"><div class="sky-clouds"></div><div class="sky-aurora"></div><div class="sky-canvas" id="sky-canvas"></div></div>
     <div class="grain" aria-hidden="true"></div>
-    <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Back to top">DODO<span>®</span></a>
+    <header class="site-header shell" id="top">
+      <a class="wordmark" href="#top" aria-label="Dodo — back to top">call me just dodo</a>
       <nav aria-label="Main navigation">
         <a href="#work">Work</a>
-        <a href="#story">Story</a>
-        <a href="#notes">Notes</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Say hello</a>
       </nav>
-      <a class="email-link" href="mailto:dodo41142727@gmail.com">Say hello <span>↗</span></a>
     </header>
 
-    <main id="top">
+    <main class="shell" id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">SEOUL · KOREA <span>●</span> BUILDING SINCE 2020</p>
         <div class="hero-copy">
-          <h1 id="hero-title">Call me<br /><em>just Dodo.</em></h1>
-          <div class="hero-side">
-            <p>My full name is Dohyeon Dodo Park.</p>
-            <a class="circle-link" href="#work" aria-label="See selected work">↓</a>
+          <h1 id="hero-title">Call me just <em>Dodo</em>.</h1>
+          <p class="hero-description">Dohyeon Dodo Park</p>
+        </div>
+        <div class="hero-bottom">
+          <div class="sky-study" id="sky-study" aria-label="Sky animation" hidden>
+            <span class="sky-status" id="sky-status" role="status"></span>
+            <button class="sky-motion" id="sky-motion" type="button" aria-pressed="false">Pause motion</button>
           </div>
+          <p class="location">Founder <span aria-hidden="true">·</span> Seoul</p>
+          <details class="time-control" id="time-control" hidden>
+            <summary aria-label="Preview a different time of day">
+              <span id="time-readout">07:12 · First light</span>
+              <span class="preview-indicator" id="preview-indicator" hidden>preview</span>
+              <span class="chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="time-panel">
+              <div class="panel-heading"><label for="time-range">A day in light</label><button id="time-now" type="button">Now ↗</button></div>
+              <p id="time-help">Follows your local clock. Slide to explore.</p>
+              <input id="time-range" type="range" min="0" max="1439" step="1" value="432" aria-describedby="time-help" />
+              <div class="range-labels" aria-hidden="true"><span>00:00</span><span>12:00</span><span>23:59</span></div>
+              <div class="time-presets" aria-label="Preview a moment">
+                <button type="button" data-minute="432">Dawn</button>
+                <button type="button" data-minute="804">Day</button>
+                <button type="button" data-minute="1116">Dusk</button>
+                <button type="button" data-minute="1388">Night</button>
+              </div>
+            </div>
+          </details>
         </div>
-        <div class="hero-highlights" aria-label="Highlights">
-          <a class="hero-highlight" href="#work"><span>NOW</span><strong>Building Bubblegum<br />an AI dating agent</strong><i>↘</i></a>
-          <a class="hero-highlight" href="#work"><span>SANTA TEST</span><strong>1M+ users<br />at 20</strong><i>↘</i></a>
-          <a class="hero-highlight" href="#work"><span>ABLUR 2.0</span><strong>₩20M<br />in month one</strong><i>↘</i></a>
-          <a class="hero-highlight" href="https://justdodo.medium.com/" target="_blank" rel="noreferrer"><span>WRITING</span><strong>My First Startup<br />on Medium</strong><i>↗</i></a>
-        </div>
-      </section>
-
-      <section class="marquee" aria-label="Areas of work">
-        <div>PRODUCTS <i>✦</i> SYSTEMS <i>✦</i> STORIES <i>✦</i> PRODUCTS <i>✦</i> SYSTEMS <i>✦</i> STORIES <i>✦</i></div>
       </section>
 
       <section class="work section" id="work" aria-labelledby="work-title">
-        <div class="section-intro">
-          <p class="section-number">01 / SELECTED WORK</p>
-          <h2 id="work-title">A few things<br />I’ve <em>put into motion.</em></h2>
-        </div>
+        <div class="section-heading"><h2 id="work-title">Work</h2><span class="section-aside">A few things I’ve built</span></div>
         <div class="project-list">
-          <article class="project project-lime">
-            <div class="project-index">01</div>
-            <div class="project-name"><p class="project-label">CURRENT PROJECT</p><h3>Bubble<br />gum</h3></div>
-            <p class="project-description">An AI dating agent on Instagram—helping conversations find their way forward.</p>
-            <div class="project-meta"><span>2025—NOW</span><span>AI / INSTAGRAM</span></div>
-            <div class="project-action">
-              <span>IN PRIVATE BETA</span>
-            </div>
+          <article class="project">
+            <h3>Bubblegum</h3>
+            <p>An AI dating agent on Instagram</p>
+            <span class="project-status">Private beta</span>
           </article>
-          <article class="project project-orange">
-            <div class="project-index">02</div>
-            <div class="project-name"><p class="project-label">CREATOR TOOLS</p><h3>Send2<br />Analyze</h3></div>
-            <p class="project-description">Turn Reels into scripts and storyboards: send an Instagram video, or paste a TikTok or YouTube link.</p>
-            <div class="project-meta"><span>2025—NOW</span><span>CREATOR / AI</span></div>
-            <div class="project-action"><a href="https://www.instagram.com/send2analyze/" target="_blank" rel="noreferrer">Visit Send2Analyze ↗</a><a href="https://send2analyze.com/" target="_blank" rel="noreferrer">Website ↗</a></div>
+          <article class="project">
+            <h3>Send2Analyze</h3>
+            <p>From video to script and storyboard</p>
+            <a href="https://send2analyze.com/" target="_blank" rel="noreferrer" aria-label="Visit Send2Analyze">Visit <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="project project-blue">
-            <div class="project-index">03</div>
-            <div class="project-name"><p class="project-label">FROM 0 TO $7K MRR</p><h3>ABLUR<br />2.0</h3></div>
-            <p class="project-description">A fast, friendly background-making tool for webtoon creators. Built at Carpenstreet.</p>
-            <details class="project-detail">
-              <summary>OUTCOMES <span>+</span></summary>
-              <div><p><b>₩20M</b> first-month revenue</p><p><b>29%</b> trial → paid</p><p><b>78%</b> month-one repurchase</p></div>
-            </details>
-            <div class="project-meta"><span>2023—2024</span><span>PRODUCT / SAAS</span></div>
-            <div class="project-action"><a href="https://ablur.studio/" target="_blank" rel="noreferrer">Visit ABLUR ↗</a></div>
-          </article>
-          <article class="project project-pink">
-            <div class="project-index">04</div>
-            <div class="project-name"><p class="project-label">THE RIDDLE NEVER ENDS</p><h3>Turtle<br />Soup AI</h3></div>
-            <p class="project-description">A situation-riddle game with an AI game master that always has another question for you.</p>
-            <div class="project-meta"><span>2023—2024</span><span>GAME / AI</span></div>
-            <div class="project-action"><a href="https://turtlesoupai.page.link/qjER" target="_blank" rel="noreferrer">Play it ↗</a></div>
+          <article class="project">
+            <h3>ABLUR 2.0</h3>
+            <p>Background tools for webtoon creators</p>
+            <a href="https://ablur.studio/" target="_blank" rel="noreferrer" aria-label="Visit ABLUR 2.0">Visit <span aria-hidden="true">↗</span></a>
           </article>
         </div>
-        <p class="origin-note"><span>AT 20</span><strong>My first website, Santa Test, reached 1M+ users and #1 trending in Korea.</strong></p>
         <details class="archive">
-          <summary><span>Open the archive</span><span>+</span></summary>
+          <summary><span>Earlier work &amp; details</span><span>+</span></summary>
           <div class="archive-grid">
+            <p><b>Turtle Soup AI</b><span>A situation-riddle game with an AI game master.</span><a href="https://turtlesoupai.page.link/qjER" target="_blank" rel="noreferrer">Play it ↗</a><small>2023—2024</small></p>
+            <p><b>ABLUR 2.0</b><span>₩20M first-month revenue · 29% trial → paid · 78% month-one repurchase. Built at Carpenstreet.</span><small>2023—2024</small></p>
+            <p><b>Send2Analyze</b><span>Send a Reel, or paste a TikTok or YouTube link.</span><a href="https://www.instagram.com/send2analyze/" target="_blank" rel="noreferrer">Instagram ↗</a><small>2025—NOW</small></p>
             <p><b>Signal + Santa Test</b><span>Anonymous messaging app · my first website reached 1M+ users</span><small>2020—2021</small></p>
             <p><b>Issue → Notion</b><span>GitHub issue to Notion backlog automation · Solo</span><a href="https://github.com/dodo4114/issue-to-notion" target="_blank" rel="noreferrer">GitHub ↗</a><small>2020</small></p>
             <p><b>StarMe</b><span>Mobile-web self-rating social network · Team lead</span><small>2021</small></p>
@@ -143,9 +139,22 @@
             <p><b>SNU Design Week</b><span>Graduation exhibition site · Development</span><small>2023—2024</small></p>
           </div>
         </details>
+
       </section>
 
-      <section class="story section" id="story" aria-labelledby="story-title">
+      <section class="writing section" id="writing" aria-labelledby="writing-title">
+        <div class="section-heading"><h2 id="writing-title">Writing</h2><a href="https://justdodo.medium.com/" target="_blank" rel="noreferrer">All writing <span aria-hidden="true">↗</span></a></div>
+        <a class="essay" href="https://justdodo.medium.com/" target="_blank" rel="noreferrer">
+          <div><span class="eyebrow">A SERIES ON MEDIUM</span><h3>My First Startup</h3></div>
+          <p>Signal, StarMe, VR, and the things I learned while building them.</p>
+          <span class="essay-arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <div class="about-panel">
+        <p class="about-label">A little more about me</p>
+        <div class="about-content">
+      <section class="story" id="story" aria-labelledby="story-title">
         <div class="section-intro"><p class="section-number">02 / WORK LOG</p><h2 id="story-title">Somewhere between<br /><em>curiosity and shipping.</em></h2></div>
         <div class="timeline">
           <article><time>2025—NOW</time><div><h3>Founder <span>@ Stealth Startup</span></h3><p>Building Bubblegum, an AI dating agent on Instagram, and whatever needs to exist next.</p></div></article>
@@ -155,18 +164,22 @@
         </div>
       </section>
 
-      <section class="credentials section" aria-labelledby="credentials-title">
+      <section class="credentials" aria-labelledby="credentials-title">
         <div class="section-intro"><p class="section-number">03 / FOOTNOTES</p><h2 id="credentials-title">A few more<br /><em>coordinates.</em></h2></div>
         <div class="credentials-grid">
           <article><p class="credential-type">EDUCATION</p><h3>Seoul National University</h3><p>College of Liberal Studies<br />Mechanical Engineering · Computer Science &amp; Engineering</p></article>
           <article><p class="credential-type">HIGH SCHOOL</p><h3>Korea Science Academy of KAIST</h3><p>26th Student President</p></article>
-          <article><p class="credential-type">SIDE QUESTS</p><h3>Won several competitions</h3><p>SNUSV Demo Day ’26 · Summer 1st Prize<br />JunctionX Asia ’22 · AWS Track 3rd Prize<br />SK × OpenAI PrompterDay · 3rd Prize</p></article>
+          <article><p class="credential-type">SIDE QUESTS</p><h3>Won several competitions</h3><p>Codex Hackathon, San Francisco · 2nd Place (solo participant)<br />SNUSV Demo Day ’26 · Summer 1st Prize<br />JunctionX Asia ’22 · AWS Track 3rd Prize<br />SK × OpenAI PrompterDay · 3rd Prize</p></article>
           <article><p class="credential-type">COMMUNITY</p><h3>Started a startup club</h3><p>Founded MeltingPot at SNU’s College of Liberal Studies.</p></article>
         </div>
       </section>
 
-      <section class="notes section" id="notes" aria-labelledby="notes-title">
+      <section class="notes" id="notes" aria-labelledby="notes-title">
         <div class="notes-heading"><p class="section-number">04 / OFF THE CLOCK</p><h2 id="notes-title">The human<br />part <em>matters.</em></h2></div>
+        <figure class="portrait-card">
+          <img src="profile-with-cat.jpg" loading="lazy" alt="Dohyeon Dodo Park holding an orange-and-white cat" />
+          <figcaption><span>MEET THE CO-FOUNDER</span><span>Chief morale officer, orange tabby</span></figcaption>
+        </figure>
         <div class="love-grid">
           <article><span>🎭</span><h3>Stage</h3><p>I used to be in a university drama club. A good scene changes the air in a room.</p></article>
           <article><span>🥘</span><h3>Cook</h3><p>I especially like cooking for people I love. A meal is a tiny product with immediate feedback.</p></article>
@@ -175,12 +188,25 @@
         </div>
         <a class="writing-link" href="https://justdodo.medium.com/" target="_blank" rel="noreferrer"><span><b>My First Startup — on Medium</b><small>Signal, StarMe, VR, and the things I learned while building them.</small></span><span>Read the series ↗</span></a>
       </section>
+
+        </div>
+      </div>
     </main>
 
-    <footer>
-      <p>LET’S MAKE SOMETHING<br /><em>worth remembering.</em></p>
-      <div><a href="mailto:dodo41142727@gmail.com">dodo41142727@gmail.com</a><a href="https://github.com/just-dodo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/callmejustdodo/" target="_blank" rel="noreferrer">LinkedIn ↗</a><span>© <span id="year"></span> DODO PARK</span></div>
+    <footer class="shell" id="contact">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Coffee first.<br />Maybe a company next.</h2>
+      <a class="contact-link" href="mailto:dodo41142727@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+      <div class="footer-bottom">
+        <span>Dohyeon Dodo Park <span aria-hidden="true">·</span> Seoul</span>
+        <div class="social-links"><a href="https://github.com/just-dodo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/callmejustdodo/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+        <span>© <span id="year">2026</span></span>
+      </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="time-of-day.js?v=20261002-sky1"></script>
+    <script src="sky-palette.js?v=20261002-sky1"></script>
+    <script src="sky-study.js?v=20261005-clouds1"></script>
+    <script src="script.js?v=20261002-sky1"></script>
   </body>
 </html>
