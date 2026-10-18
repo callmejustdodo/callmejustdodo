@@ -29,7 +29,7 @@ test('existing external destinations remain available', () => {
 
 test('user-added portrait and original biographical content are preserved', () => {
   for (const text of ['profile-with-cat.jpg', 'Dohyeon Dodo Park holding an orange-and-white cat',
-    'Chief morale officer, orange tabby', 'Carpenstreet', 'LoadComplete',
+    'Chief morale officer, Mone', 'Carpenstreet', 'LoadComplete',
     'Seoul National University', 'Korea Science Academy of KAIST', 'MeltingPot',
     'Santa Test', 'My First Startup']) assert.ok(html.includes(text), `Missing: ${text}`);
   assert.ok(fs.existsSync(path.join(root, 'profile-with-cat.jpg')));

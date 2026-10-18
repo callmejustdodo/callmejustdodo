@@ -1,0 +1,60 @@
+.blog-page .atmosphere { height: 760px; }
+.blog-page nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: .4em; }
+.blog-main { min-height: 62vh; }
+.blog-intro { min-height: 390px; padding: 105px 0 78px; display: flex; flex-direction: column; justify-content: center; }
+.blog-intro h1 { font-size: clamp(64px, 8vw, 106px); line-height: 1.04; margin-top: 16px; max-width: 850px; }
+.blog-intro h1 em { font-synthesis: none; }
+.blog-intro > p:last-child { color: var(--muted); font-size: clamp(17px, 2vw, 22px); margin-top: 21px; }
+.blog-list { border-top: 1px solid var(--line); padding-top: 28px; padding-bottom: 96px; }
+.blog-entry { display: grid; grid-template-columns: 160px minmax(0, 1fr) 28px; align-items: start; gap: 24px; padding: 34px 0 38px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.blog-entry time { color: var(--muted); font: 11px/1.5 var(--mono); padding-top: 10px; }
+.blog-entry strong { display: block; font: 400 clamp(29px, 3.3vw, 42px)/1.18 var(--display); letter-spacing: -.025em; }
+.blog-entry small { display: block; color: var(--muted); font: 14px/1.55 var(--sans); margin-top: 10px; }
+.blog-entry-arrow { color: var(--accent); font-size: 21px; }
+.blog-entry:hover strong { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.blog-empty { color: var(--muted); padding: 30px 0; border-bottom: 1px solid var(--line); }
+.blog-back { display: inline-block; color: var(--accent); font-size: 13px; text-decoration: none; margin-top: 58px; }
+.blog-back:hover { text-decoration: underline; }
+.blog-article { max-width: 760px; margin: 70px auto 0; }
+.blog-article-header { border-bottom: 1px solid var(--line); padding-bottom: 45px; }
+.blog-article-header h1 { font-size: clamp(55px, 7vw, 88px); line-height: 1.08; margin-top: 17px; }
+.blog-article-header > p:last-child { font-size: clamp(18px, 2vw, 23px); line-height: 1.45; color: var(--muted); margin-top: 22px; }
+.markdown-body { font-size: 18px; line-height: 1.8; padding-top: 40px; overflow-wrap: anywhere; }
+.markdown-body > * + * { margin-top: 1.3em; }
+.markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 { font-family: var(--display); font-weight: 400; line-height: 1.2; margin-top: 2em; }
+.markdown-body h2 { font-size: 40px; }
+.markdown-body h3 { font-size: 30px; }
+.markdown-body h4, .markdown-body h5, .markdown-body h6 { font-size: 23px; }
+.markdown-body a { color: var(--accent); }
+.markdown-body ul, .markdown-body ol { padding-left: 1.5em; }
+.markdown-body li + li { margin-top: .4em; }
+.markdown-body blockquote { border-left: 2px solid var(--accent); padding-left: 22px; margin-left: 0; color: var(--muted); }
+.markdown-body blockquote p { margin: 0; }
+.markdown-body hr { border: 0; border-top: 1px solid var(--line); margin-block: 2.5em; }
+.markdown-body img { display: block; max-width: 100%; height: auto; }
+.markdown-body code { font: .83em/1.5 var(--mono); background: color-mix(in srgb, var(--ink) 8%, transparent); padding: .13em .35em; border-radius: 3px; }
+.markdown-body pre { overflow-x: auto; padding: 22px; background: color-mix(in srgb, var(--ink) 8%, var(--paper)); border: 1px solid var(--line); border-radius: 4px; }
+.markdown-body pre code { background: none; padding: 0; }
+.blog-back-bottom { margin-block: 80px 100px; }
+@media (max-width: 800px) {
+  .blog-intro { min-height: 330px; padding-top: 80px; }
+  .blog-entry { grid-template-columns: 110px minmax(0, 1fr) 24px; }
+}
+@media (max-width: 540px) {
+  .blog-intro { min-height: 310px; padding: 70px 0 58px; }
+  .blog-intro h1 { font-size: clamp(50px, 12vw, 66px); }
+  .blog-list { padding-bottom: 68px; }
+  .blog-entry { grid-template-columns: minmax(0, 1fr) 22px; gap: 8px 12px; padding: 27px 0 30px; }
+  .blog-entry time { grid-column: 1 / -1; padding-top: 0; }
+  .blog-entry strong { font-size: 31px; }
+  .blog-entry small { font-size: 13px; }
+  .blog-entry-arrow { grid-column: 2; grid-row: 2; }
+  .blog-back { margin-top: 30px; }
+  .blog-article { margin-top: 64px; }
+  .blog-article-header { padding-bottom: 35px; }
+  .blog-article-header h1 { font-size: clamp(47px, 11vw, 66px); }
+  .markdown-body { font-size: 16px; padding-top: 25px; }
+  .markdown-body h2 { font-size: 33px; }
+  .markdown-body h3 { font-size: 26px; }
+  .blog-back-bottom { margin-block: 65px 80px; }
+}
