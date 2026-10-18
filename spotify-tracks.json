@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-10-18T16:23:03.426Z",
+  "range": "short_term",
+  "tracks": [
+    {
+      "name": "Flower",
+      "artist": "Johnny Stimson",
+      "album": "Flower",
+      "url": "https://open.spotify.com/track/48QKOSXSIdV6nZkT0pfqLn",
+      "image": "https://i.scdn.co/image/ab67616d00001e02fea93b4bd85d2852c683ca76",
+      "explicit": false
+    },
+    {
+      "name": "고백",
+      "artist": "DELISPICE",
+      "album": "Espresso",
+      "url": "https://open.spotify.com/track/20tWEsVsKU6FfzXGt4IOuV",
+      "image": "https://i.scdn.co/image/ab67616d00001e029ee364d7aacc7ae61af96b2b",
+      "explicit": false
+    },
+    {
+      "name": "Amazing You",
+      "artist": "Han Dong Geun",
+      "album": "The 3rd Digital Single `Amazing You'",
+      "url": "https://open.spotify.com/track/37dkyQQNJLaqk09kkNr7In",
+      "image": "https://i.scdn.co/image/ab67616d00001e026c50cbc00d297cf578c34423",
+      "explicit": false
+    }
+  ]
+}

@@ -27,7 +27,7 @@ test('build creates ordered, linked, static pages and skips drafts', t => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'dodo-blog-'));
   t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
   const source = path.join(__dirname, '..');
-  for (const name of ['index.html', 'styles.css', 'blog.css', 'blog-time.js', 'script.js', 'time-of-day.js', 'sky-palette.js', 'sky-study.js', 'sky-study.css', 'sky-paper.js', 'sky-natural.js', 'favicon.ico', 'favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'og-image.png', 'og-image.svg', 'profile-with-cat.jpg']) fs.copyFileSync(path.join(source, name), path.join(temp, name));
+  for (const name of ['index.html', 'callback.html', 'spotify-callback.css', 'spotify-callback.js', 'spotify-top.js', 'spotify-logo-black.svg', 'spotify-logo-white.svg', 'chess-rating.js', 'styles.css', 'blog.css', 'blog-time.js', 'script.js', 'time-of-day.js', 'sky-palette.js', 'sky-study.js', 'sky-study.css', 'sky-paper.js', 'sky-natural.js', 'favicon.ico', 'favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'og-image.png', 'og-image.svg', 'profile-with-cat.jpg']) fs.copyFileSync(path.join(source, name), path.join(temp, name));
   for (const name of ['fonts', 'vendor']) fs.cpSync(path.join(source, name), path.join(temp, name), { recursive: true });
   fs.mkdirSync(path.join(temp, 'blog', 'posts'), { recursive: true });
   fs.mkdirSync(path.join(temp, 'blog', 'images'));
@@ -36,7 +36,11 @@ test('build creates ordered, linked, static pages and skips drafts', t => {
   fs.writeFileSync(path.join(temp, 'blog', 'posts', 'older.md'), frontmatter('Older', '2026-01-01'));
   fs.writeFileSync(path.join(temp, 'blog', 'posts', 'newer.md'), frontmatter('Newer', '2026-10-19'));
   fs.writeFileSync(path.join(temp, 'blog', 'posts', 'unpublished.md'), frontmatter('Unpublished', '2026-10-20', 'draft: true\n'));
+  fs.writeFileSync(path.join(temp, '.env'), 'SPOTIFY_CLIENT_ID=public-test-id\nSPOTIFY_CLIENT_SECRET=private-test-secret\nSPOTIFY_REFRESH_TOKEN=private-test-token\n');
   assert.equal(build(temp), 2);
+  const callback = fs.readFileSync(path.join(temp, 'dist', 'callback.html'), 'utf8');
+  assert.match(callback, /<meta name="spotify-client-id" content="public-test-id" \/>/);
+  assert.doesNotMatch(callback, /private-test-secret|private-test-token|<input[^>]+id="spotify-client-id"/);
   const index = fs.readFileSync(path.join(temp, 'dist', 'blog', 'index.html'), 'utf8');
   const article = fs.readFileSync(path.join(temp, 'dist', 'blog', 'newer', 'index.html'), 'utf8');
   assert.ok(index.indexOf('Newer') < index.indexOf('Older'));

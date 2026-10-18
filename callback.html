@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="spotify-client-id" content="" />
+    <title>Connect Spotify — Call Me Just Dodo</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/spotify-callback.css" />
+    <script src="/spotify-callback.js" defer></script>
+  </head>
+  <body>
+    <main class="shell spotify-connect">
+      <a class="wordmark" href="/">call me just dodo</a>
+      <section class="spotify-connect-card" aria-labelledby="spotify-connect-title">
+        <p class="eyebrow">SPOTIFY / PRIVATE SETUP</p>
+        <h1 id="spotify-connect-title">Connect your music.</h1>
+        <p class="spotify-connect-intro">Authorize your Spotify account to get a refresh token for the Top 3 songs on this site. The token appears only in this browser tab.</p>
+
+        <form id="spotify-connect-form">
+          <p class="spotify-connect-help">The registered callback URL is <code>https://callmejustdodo.com/callback</code>.</p>
+          <button class="spotify-connect-button" type="submit">Authorize with Spotify ↗</button>
+        </form>
+
+        <div id="spotify-token-panel" hidden>
+          <label for="spotify-refresh-token">Refresh token</label>
+          <textarea id="spotify-refresh-token" rows="5" readonly spellcheck="false"></textarea>
+          <button class="spotify-connect-button" id="spotify-copy-token" type="button">Copy refresh token</button>
+          <p class="spotify-connect-help">Paste it into <code>SPOTIFY_REFRESH_TOKEN</code> in your local <code>.env</code>. Treat it like a password.</p>
+        </div>
+        <p id="spotify-connect-status" class="spotify-connect-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -189,8 +189,19 @@
           <article><span>🎭</span><h3>Stage</h3><p>I used to be in a university drama club. A good scene changes the air in a room.</p></article>
           <article><span>🥘</span><h3>Cook</h3><p>I especially like cooking for people I love. A meal is a tiny product with immediate feedback.</p></article>
           <article><span>🏄</span><h3>Water sports</h3><p>Surfing, scuba, skiing (I consider snow as water)—if there’s water in it, I’m generally in.</p></article>
-          <article><span>♞</span><h3>Chess</h3><p>Recently learning to be a little less impulsive. Current rating: around 1300.</p></article>
+          <article><span>♞</span><h3>Chess</h3><p>Recently learning to be a little less impulsive.<br /><a class="chess-rating" id="chess-rating" href="https://www.chess.com/member/callmejustdodo" target="_blank" rel="noreferrer" hidden>Rapid <strong id="chess-rating-value"></strong> on Chess.com ↗</a></p></article>
         </div>
+        <section class="spotify-section" id="spotify-section" aria-labelledby="spotify-title" hidden>
+          <div class="spotify-heading">
+            <div><p class="section-number">05 / ON REPEAT</p><h2 id="spotify-title">On repeat <em>lately.</em></h2><p>My top tracks from the last four weeks.</p></div>
+            <a class="spotify-credit" href="https://open.spotify.com/" target="_blank" rel="noreferrer" aria-label="Open Spotify">
+              <img class="spotify-logo spotify-logo-light" src="spotify-logo-black.svg" alt="Spotify" />
+              <img class="spotify-logo spotify-logo-dark" src="spotify-logo-white.svg" alt="" aria-hidden="true" />
+            </a>
+          </div>
+          <ol class="spotify-tracks" id="spotify-tracks"></ol>
+          <p class="spotify-updated" id="spotify-updated"></p>
+        </section>
         <a class="writing-link" href="https://justdodo.medium.com/" target="_blank" rel="noreferrer"><span><b>My First Startup — on Medium</b><small>Signal, StarMe, VR, and the things I learned while building them.</small></span><span>Read the series ↗</span></a>
       </section>
 
@@ -213,5 +224,7 @@
     <script src="sky-palette.js?v=20261002-sky1"></script>
     <script src="sky-study.js?v=20261005-clouds1"></script>
     <script src="script.js?v=20261002-sky1"></script>
+    <script src="spotify-top.js?v=20261019-1" defer></script>
+    <script src="chess-rating.js?v=20261019-1" defer></script>
   </body>
 </html>

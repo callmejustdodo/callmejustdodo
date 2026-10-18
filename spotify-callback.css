@@ -1,0 +1,24 @@
+.spotify-connect { min-height: 100vh; padding-top: 32px; padding-bottom: 80px; }
+.spotify-connect-card { max-width: 650px; margin: 12vh auto 0; border-top: 1px solid var(--line); padding-top: 24px; }
+.spotify-connect h1 { margin-top: 12px; font-size: clamp(44px, 7vw, 72px); line-height: 1.08; }
+.spotify-connect-intro { max-width: 540px; margin: 24px 0 36px; color: var(--muted); }
+.spotify-connect label { display: block; margin-bottom: 10px; font-size: 14px; font-weight: 600; }
+.spotify-connect input, .spotify-connect textarea {
+  display: block; width: 100%; border: 1px solid var(--line); border-radius: 0;
+  background: var(--paper); color: var(--ink); padding: 14px 16px;
+  font: 13px/1.5 var(--mono);
+}
+.spotify-connect textarea { resize: vertical; overflow-wrap: anywhere; }
+.spotify-connect-help { margin: 12px 0 20px; color: var(--muted); font-size: 13px; }
+.spotify-connect-help code { overflow-wrap: anywhere; }
+.spotify-connect-button {
+  min-height: 46px; padding: 10px 18px; background: var(--ink); color: var(--paper);
+  font-size: 14px; text-align: left;
+}
+.spotify-connect-button:hover { opacity: .85; }
+.spotify-connect-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.spotify-connect-status { margin-top: 20px; min-height: 24px; color: var(--accent); font-size: 14px; }
+@media (max-width: 540px) {
+  .spotify-connect { padding-top: 20px; }
+  .spotify-connect-card { margin-top: 10vh; }
+}

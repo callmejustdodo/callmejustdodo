@@ -13,6 +13,21 @@ cd dist && python3 -m http.server 4173
 
 Then visit `http://localhost:4173` or `http://localhost:4173/blog/`.
 
+## Spotify Top 3
+
+The site shows a static snapshot of Dodo's top tracks from roughly the last four weeks. No visitor receives a Spotify token or calls the Spotify API.
+
+1. Set `SPOTIFY_CLIENT_ID` in the untracked local `.env`. For Vercel builds, set the same variable in the project's build environment. The build embeds only this public ID, so the callback has no Client ID field. Deploy the callback page, then open `https://callmejustdodo.com/callback` in the same browser tab where you authorize Spotify. Its registered redirect URI must exactly match that URL.
+2. After authorization, copy the refresh token shown on the callback page. Put it in `.env` as `SPOTIFY_REFRESH_TOKEN`. The PKCE flow does not need the client secret.
+3. Run `node scripts/update-spotify.cjs`. This refreshes the access token, fetches the top three tracks, and writes `spotify-tracks.json`. If Spotify rotates the refresh token, the script updates `.env` automatically.
+4. Run `node scripts/build-blog.cjs` and deploy the site. Repeat the update and deployment whenever you want to refresh the public list. The music section stays hidden until `spotify-tracks.json` exists.
+
+Never commit `.env` or share a refresh token. The callback removes the authorization code from the address bar and does not store the refresh token after the page is closed. Spotify's official full logos are in `spotify-logo-black.svg` and `spotify-logo-white.svg` for attribution. Album covers link back to their tracks and are displayed without cropping.
+
+## Chess.com rating
+
+The Chess card requests the public `callmejustdodo` player stats from Chess.com's Published Data API when a visitor opens the page. It displays the latest rapid rating and links to the player profile. If the API is unavailable or no rapid rating exists, the rating link stays hidden. No credentials or local update step are needed; Chess.com may cache the API result for up to 12 hours.
+
 ## Write a blog post
 
 Add a Markdown file to `blog/posts/` with a lowercase, hyphenated filename. Its filename becomes the URL: `blog/posts/my-new-post.md` → `/blog/my-new-post/`.

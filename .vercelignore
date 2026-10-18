@@ -4,3 +4,4 @@ output
 tests
 README.md
 AGENTS.md
+.env

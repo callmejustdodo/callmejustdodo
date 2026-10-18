@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { envValue } = require('./update-spotify.cjs');
 
 const SITE = 'https://callmejustdodo.com';
 const ROOT = path.resolve(__dirname, '..');
@@ -186,9 +187,19 @@ function build(root = ROOT, output = path.join(root, 'dist')) {
     .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
   fs.rmSync(output, { recursive: true, force: true });
   fs.mkdirSync(output, { recursive: true });
-  for (const file of ['index.html', 'styles.css', 'blog.css', 'blog-time.js', 'script.js', 'time-of-day.js', 'sky-palette.js', 'sky-study.js', 'sky-study.css', 'sky-paper.js', 'sky-natural.js', 'favicon.ico', 'favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'og-image.png', 'og-image.svg', 'profile-with-cat.jpg']) {
+  for (const file of ['index.html', 'callback.html', 'spotify-callback.css', 'spotify-callback.js', 'spotify-top.js', 'spotify-logo-black.svg', 'spotify-logo-white.svg', 'chess-rating.js', 'styles.css', 'blog.css', 'blog-time.js', 'script.js', 'time-of-day.js', 'sky-palette.js', 'sky-study.js', 'sky-study.css', 'sky-paper.js', 'sky-natural.js', 'favicon.ico', 'favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'og-image.png', 'og-image.svg', 'profile-with-cat.jpg']) {
     fs.copyFileSync(path.join(root, file), path.join(output, file));
   }
+  const envPath = path.join(root, '.env');
+  const clientId = process.env.SPOTIFY_CLIENT_ID || (fs.existsSync(envPath) ? envValue(fs.readFileSync(envPath, 'utf8'), 'SPOTIFY_CLIENT_ID') : '');
+  if (clientId && !/^[A-Za-z0-9_-]+$/.test(clientId)) throw new Error('SPOTIFY_CLIENT_ID contains invalid characters.');
+  const callbackPath = path.join(output, 'callback.html');
+  const callbackHtml = fs.readFileSync(callbackPath, 'utf8');
+  const clientIdMarker = '<meta name="spotify-client-id" content="" />';
+  if (!callbackHtml.includes(clientIdMarker)) throw new Error('Spotify callback Client ID marker is missing.');
+  fs.writeFileSync(callbackPath, callbackHtml.replace(clientIdMarker, `<meta name="spotify-client-id" content="${escapeHtml(clientId)}" />`));
+  const spotifyTracks = path.join(root, 'spotify-tracks.json');
+  if (fs.existsSync(spotifyTracks)) fs.copyFileSync(spotifyTracks, path.join(output, 'spotify-tracks.json'));
   for (const directory of ['fonts', 'vendor']) fs.cpSync(path.join(root, directory), path.join(output, directory), { recursive: true });
   const images = path.join(root, 'blog', 'images');
   if (fs.existsSync(images)) {
