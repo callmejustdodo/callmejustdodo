@@ -73,7 +73,13 @@
 
   async function load() {
     try {
-      const response = await fetch('/spotify-tracks.json');
+      let response;
+      try {
+        response = await fetch('/api/spotify');
+        if (!response.ok) throw new Error(`Spotify returned ${response.status}`);
+      } catch {
+        response = await fetch('/spotify-tracks.json');
+      }
       if (!response.ok) return;
       const data = await response.json();
       if (!Array.isArray(data.tracks)) return;
@@ -82,7 +88,7 @@
       list.replaceChildren(...items);
       const updated = new Date(data.updatedAt);
       if (!Number.isNaN(updated.getTime())) {
-        document.getElementById('spotify-updated').textContent = `Updated ${new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric' }).format(updated)}`;
+        document.getElementById('spotify-updated').textContent = `Updated ${new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(updated)}`;
       }
       section.hidden = false;
     } catch {

@@ -15,7 +15,9 @@ Then visit `http://localhost:4173` or `http://localhost:4173/blog/`.
 
 ## Spotify Top 3
 
-The site shows a static snapshot of Dodo's top tracks from roughly the last four weeks. No visitor receives a Spotify token or calls the Spotify API.
+The site shows Dodo's top tracks from roughly the last four weeks. No visitor receives a Spotify token or calls the Spotify API directly.
+
+On Vercel, `/api/spotify` refreshes the public list on demand and Vercel's CDN caches a successful response for one hour. Add `SPOTIFY_REFRESH_TOKEN` as a sensitive Production environment variable; `SPOTIFY_CLIENT_ID` is also required. The browser falls back to the deployed `spotify-tracks.json` snapshot if the Function is unavailable. If Spotify rotates the refresh token, update the Vercel environment variable and redeploy. Spotify refresh tokens expire after six months and require authorization again.
 
 1. Set `SPOTIFY_CLIENT_ID` in the untracked local `.env`. For Vercel builds, set the same variable in the project's build environment. The build embeds only this public ID, so the callback has no Client ID field. Deploy the callback page, then open `https://callmejustdodo.com/callback` in the same browser tab where you authorize Spotify. Its registered redirect URI must exactly match that URL.
 2. After authorization, copy the refresh token shown on the callback page. Put it in `.env` as `SPOTIFY_REFRESH_TOKEN`. The PKCE flow does not need the client secret.
