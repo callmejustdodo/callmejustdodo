@@ -15,7 +15,7 @@ Then visit `http://localhost:4173` or `http://localhost:4173/blog/`.
 
 ## Agent skills
 
-`/skills/` displays **Dodo’s Skills** from [callmejustdodo/skills](https://github.com/callmejustdodo/skills). Pushing a root-level `<skill-name>/SKILL.md` or README change to that repository’s `main` branch triggers the `Sync skills website` GitHub Actions workflow and a Vercel production rebuild. New skills are discovered from the Git tree, even without a README table entry. README summaries take precedence; otherwise the skill's frontmatter description is used. Deleted skills are removed on the next successful rebuild.
+`/skills/` displays **Dodo’s Skills** from [callmejustdodo/skills](https://github.com/callmejustdodo/skills). Pushing a root-level `<skill-name>/SKILL.md` or README change to that repository’s `main` branch triggers the [`Sync Dodo’s Skills site`](https://github.com/callmejustdodo/skills/actions/workflows/sync-site.yml) GitHub Actions workflow and a Vercel production rebuild. New skills are discovered from the Git tree, even without a README table entry. README summaries take precedence; otherwise the skill's frontmatter description is used. Deleted skills are removed on the next successful rebuild.
 
 The build refreshes `skills.json` from a single Git revision. If GitHub is unavailable, it retains the saved catalog. Run `node scripts/sync-skills.cjs` to refresh locally. The workflow stores its deploy hook in the `SITE_DEPLOY_HOOK_URL` Actions secret; the hook URL must never be committed. Changes appear when the automatic deployment finishes, usually within a few minutes. Unpublished local skills are not included.
 
