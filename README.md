@@ -13,6 +13,10 @@ cd dist && python3 -m http.server 4173
 
 Then visit `http://localhost:4173` or `http://localhost:4173/blog/`.
 
+## Agent skills
+
+`/skills/` lists the public Skills table from [dodo-skills](https://github.com/callmejustdodo/dodo-skills), with repository links and install commands. The build refreshes `skills.json` from the repository README; if GitHub is unavailable, it uses the saved catalog. New or changed skills appear after the next site deployment. Run `node scripts/sync-skills.cjs` to refresh the snapshot separately. No credentials are needed, and unpublished local skills are not included.
+
 ## Spotify Top 3
 
 The site shows Dodo's top tracks from roughly the last four weeks. No visitor receives a Spotify token or calls the Spotify API directly.

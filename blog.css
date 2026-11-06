@@ -58,3 +58,21 @@
   .markdown-body h3 { font-size: 26px; }
   .blog-back-bottom { margin-block: 65px 80px; }
 }
+
+.skills-install { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 30px 0 48px; }
+.skills-install h2 { font: 400 32px/1.2 var(--display); }
+.skills-install p, .skill-entry p { color: var(--muted); font-size: 15px; line-height: 1.65; margin-top: 12px; }
+.skills-install code, .skill-entry code { display: block; font: 12px/1.7 var(--mono); overflow-wrap: anywhere; padding: 16px 18px; border: 1px solid var(--line); background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.skills-install a { display: inline-block; color: var(--accent); font-size: 13px; margin-top: 15px; }
+.skill-entry { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--line); }
+.skill-number { font: 12px/1.5 var(--mono); color: var(--muted); padding-top: 9px; }
+.skill-entry h3 { font: 400 clamp(26px, 3vw, 38px)/1.2 var(--display); overflow-wrap: anywhere; }
+.skill-entry h3 a { text-decoration: none; }
+.skill-entry h3 a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.skill-entry h3 span { color: var(--accent); font: 20px var(--sans); }
+.skill-entry code { margin-top: 20px; width: fit-content; max-width: 100%; }
+@media (max-width: 540px) {
+  .skills-install { grid-template-columns: 1fr; gap: 22px; }
+  .skill-entry { grid-template-columns: 24px minmax(0, 1fr); gap: 14px; }
+  .site-header { flex-wrap: wrap; gap: 16px; }
+}

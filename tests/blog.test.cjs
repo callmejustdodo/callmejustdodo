@@ -27,7 +27,7 @@ test('build creates ordered, linked, static pages and skips drafts', t => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'dodo-blog-'));
   t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
   const source = path.join(__dirname, '..');
-  for (const name of ['index.html', 'callback.html', 'spotify-callback.css', 'spotify-callback.js', 'spotify-top.js', 'spotify-logo-black.svg', 'spotify-logo-white.svg', 'chess-rating.js', 'styles.css', 'blog.css', 'blog-time.js', 'script.js', 'time-of-day.js', 'sky-palette.js', 'sky-study.js', 'sky-study.css', 'sky-paper.js', 'sky-natural.js', 'favicon.ico', 'favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'og-image.png', 'og-image.svg', 'profile-with-cat.jpg']) fs.copyFileSync(path.join(source, name), path.join(temp, name));
+  for (const name of ['skills.json', 'index.html', 'callback.html', 'spotify-callback.css', 'spotify-callback.js', 'spotify-top.js', 'spotify-logo-black.svg', 'spotify-logo-white.svg', 'chess-rating.js', 'styles.css', 'blog.css', 'blog-time.js', 'script.js', 'time-of-day.js', 'sky-palette.js', 'sky-study.js', 'sky-study.css', 'sky-paper.js', 'sky-natural.js', 'favicon.ico', 'favicon.svg', 'favicon-32.png', 'apple-touch-icon.png', 'og-image.png', 'og-image.svg', 'profile-with-cat.jpg']) fs.copyFileSync(path.join(source, name), path.join(temp, name));
   for (const name of ['fonts', 'vendor']) fs.cpSync(path.join(source, name), path.join(temp, name), { recursive: true });
   fs.mkdirSync(path.join(temp, 'blog', 'posts'), { recursive: true });
   fs.mkdirSync(path.join(temp, 'blog', 'images'));

@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { envValue } = require('./update-spotify.cjs');
+const { REPOSITORY, syncSkills } = require('./sync-skills.cjs');
 
 const SITE = 'https://callmejustdodo.com';
 const ROOT = path.resolve(__dirname, '..');
@@ -137,7 +138,7 @@ function jsonForHtml(value) {
   return JSON.stringify(value).replace(/</g, '\\u003c');
 }
 
-function layout({ title, description, canonical, content, type = 'website', schema }) {
+function layout({ title, description, canonical, content, type = 'website', schema, section = 'blog' }) {
   const fullTitle = `${title} — Call Me Just Dodo`;
   return `<!doctype html>
 <html lang="en">
@@ -169,7 +170,7 @@ function layout({ title, description, canonical, content, type = 'website', sche
     <div class="atmosphere" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
     <header class="site-header shell">
       <a class="wordmark" href="/" aria-label="Dodo — home">call me just dodo</a>
-      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/blog/" aria-current="page">Blog</a><a href="/#contact">Say hello</a></nav>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/blog/"${section === 'blog' ? ' aria-current="page"' : ''}>Blog</a><a href="/skills/"${section === 'skills' ? ' aria-current="page"' : ''}>Skills</a><a href="/#contact">Say hello</a></nav>
     </header>
     <main class="shell blog-main" id="main">${content}</main>
     <footer class="shell" id="contact"><p class="eyebrow">GET IN TOUCH</p><h2>Coffee first.<br>Maybe a company next.</h2><a class="contact-link" href="mailto:dodo41142727@gmail.com">Say hello <span aria-hidden="true">↗</span></a><div class="footer-bottom"><span>Dohyeon Dodo Park <span aria-hidden="true">·</span> Seoul</span><div class="social-links"><a href="https://github.com/just-dodo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/callmejustdodo/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><span>© ${new Date().getFullYear()}</span></div></footer>
@@ -220,8 +221,13 @@ function build(root = ROOT, output = path.join(root, 'dist')) {
     fs.mkdirSync(destination, { recursive: true });
     fs.writeFileSync(path.join(destination, 'index.html'), html);
   }
+  const skills = JSON.parse(fs.readFileSync(path.join(root, 'skills.json'), 'utf8'));
+  const skillEntries = skills.map((skill, index) => `<article class="skill-entry"><span class="skill-number">${String(index + 1).padStart(2, '0')}</span><div><h3><a href="${REPOSITORY}/tree/main/${encodeURIComponent(skill.slug)}">${escapeHtml(skill.name)} <span aria-hidden="true">↗</span></a></h3><p>${escapeHtml(skill.description)}</p><code>npx skills add callmejustdodo/dodo-skills --skill ${escapeHtml(skill.slug)}</code></div></article>`).join('\n');
+  const skillsHtml = layout({ title: 'Skills', description: 'Reusable AI agent skills by Dodo. Browse the collection and install what you need.', canonical: `${SITE}/skills/`, section: 'skills', content: `<div class="blog-intro"><p class="eyebrow">TOOLS / OPEN SOURCE</p><h1>A few useful <em>skills.</em></h1><p>Small workflows I use to get things done. Take what you need.</p></div><section class="skills-install" aria-labelledby="install-title"><div><h2 id="install-title">Make them yours.</h2><p>Install the collection, or pick a skill below. Each guide includes its setup requirements.</p></div><div><code>npx skills add callmejustdodo/dodo-skills</code><a href="${REPOSITORY}">Explore dodo-skills on GitHub ↗</a></div></section><section class="blog-list" aria-labelledby="skills-title"><div class="section-heading"><h2 id="skills-title">The collection</h2><span class="section-aside">${skills.length} skills / Open source</span></div>${skillEntries}</section>`, schema: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Dodo’s agent skills', url: `${SITE}/skills/`, isBasedOn: REPOSITORY } });
+  fs.mkdirSync(path.join(output, 'skills'), { recursive: true });
+  fs.writeFileSync(path.join(output, 'skills', 'index.html'), skillsHtml);
   return posts.length;
 }
 
-if (require.main === module) console.log(`Built blog with ${build()} post(s) in dist/.`);
+if (require.main === module) syncSkills().then(() => console.log(`Built site with ${build()} post(s) and skills in dist/.`)).catch(error => { console.error(error); process.exitCode = 1; });
 module.exports = { build, escapeHtml, parsePost, renderMarkdown, safeUrl };

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "followup-mail",
+    "slug": "followup-mail",
+    "description": "Drafts a Korean meeting follow-up email and saves it as a Gmail draft (never sends)."
+  },
+  {
+    "name": "voice-memo-2-meeting-note",
+    "slug": "voice-memo-2-meeting-note",
+    "description": "Transcribes audio (ElevenLabs Scribe v2), summarizes, and creates a Notion page."
+  },
+  {
+    "name": "mac-lag-doctor",
+    "slug": "mac-lag-doctor",
+    "description": "Diagnoses macOS lag with evidence — A/B-tests every suspect before blaming it."
+  },
+  {
+    "name": "product-planning",
+    "slug": "product-planning",
+    "description": "Interviews you, writes planning documents, gets mockup approval, and produces an AI implementation plan."
+  },
+  {
+    "name": "card-news-publish",
+    "slug": "card-news-publish",
+    "description": "Sends a Figma card-news deck to Slack for approval and publishes it as an Instagram + Threads carousel on [발행]."
+  },
+  {
+    "name": "korean-tax-invoice",
+    "slug": "korean-tax-invoice",
+    "description": "Issues Korean e-tax invoices (세금계산서) via Bolta, with guards against duplicate and wrong issuance. Vendored from sdkfile/korean-tax-invoice."
+  }
+]
